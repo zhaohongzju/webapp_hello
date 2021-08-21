@@ -1,0 +1,62 @@
+备考：题目多，比较难，靠背题不现实。根据题目来学习了解知识点，记录下来，形成体系，这样容易复习，将来用到时也容易回忆。
+具体做法：对题目用到的知识点分类 web job，app, function, event， grid，带上link；并记录题目考点（和选项有关）。用word记录。
+
+
+认证 learning path: https://docs.microsoft.com/zh-cn/learn/certifications/exams/az-204?tab=tab-learning-paths
+
+认证：https://docs.microsoft.com/zh-cn/learn/certifications/exams/az-204
+考试大纲：
+开发 Azure 计算解决方案 (25-30%)
+开发 Azure 存储 (15-20%)
+实现 Azure 安全性 (20-25%)
+监控、故障排除并优化 Azure 解决方案 (15-20%)
+连接并使用 Azure 服务和第三方服务 (15-20%)
+
+
+============================Jun, 2021=========================================
+官方文档
+https://docs.azure.cn/zh-cn/
+
+如何白嫖微软Azure12个月及避坑指南：
+https://www.cnblogs.com/kklldog/p/azure-free-12m.html
+
+https://portal.azure.com/#home
+
+
+这个最好做出来，现在卡在没有azure账号上。另外，可能培训的10多个主题，在cn上都有对应的资料，找一下。
+https://docs.microsoft.com/zh-cn/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app
+
+Azure Functions 入门
+https://docs.microsoft.com/zh-cn/azure/azure-functions/functions-get-started?pivots=programming-language-java
+
+
+这里很多Azure官方学习资料：
+https://docs.microsoft.com/zh-cn/learn/browse/?expanded=azure&products=azure
+
+https://docs.microsoft.com/en-us/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux
+
+
+Desktop Docker: 最底下有win8的
+https://www.runoob.com/docker/windows-docker-install.html
+安装到了这里：
+C:\Users\hp e\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Docker
+启动docker terminal遇到问题 docker toolbox error with pre-create check: the computer does not have VT-X/AMD-V enabled. 解决办法：进入bios设置cpu 允许虚拟化， 参考：https://blog.csdn.net/netyeaxi/article/details/89207329  开启虚拟化
+也曾尝试过这个，但遇到问题 Error getting IP address: ssh command error： https://blog.csdn.net/qq_43363200/article/details/106936416  
+
+
+https://docs.azure.cn/zh-cn/#pivot=products&panel=Compute
+https://portal.azure.com/#home
+
+TODO:
+1. 看下其他10多个module，快速看下主要都干了啥；在zh-cn上找下这些module的中文版。
+2. 了解azure及其架构 功能介绍，熟悉azure cli。
+3. 安装培训需要的软件。
+
+
+疑问： 
+azure china 的数据中心在中国，为什么还要visa卡申请VM？能够用 银联卡 申请？
+cli装好了，然后呢？C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2
+hipervisio。虚拟机只能虚拟在一台物理机上吗，可以一台虚拟机由多台物理机提供算力吗？https://docs.microsoft.com/zh-cn/learn/modules/intro-to-azure-fundamentals/what-is-microsoft-azure
+
+azure cn缺省link打开是英文doc，把en-us改成zh-cn就会切换到中文doc。
+

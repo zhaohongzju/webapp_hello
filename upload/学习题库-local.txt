@@ -1,0 +1,199 @@
+https://www.examtopics.com/exams/microsoft/az-204/
+账号：...@163.com，普通密码
+
+目标：每天60题，3-5分钟1题，需要3-5小时。每小时10-20题.  当前进展不顺利，到了view 10。
+冲刺：每小时10题。只理不背。
+遇到难题：
+1)只记录下，等全部题目梳理完后回过头再看，如果类似题目多，才需要学习理解。如果类似题目少，就死记硬背答案就可以了。
+2)对于pdf版本没有的题目，更是先跳过。
+
+T1 共38题
+12:00-1:00 T2#1-T5 (Topic 2 - Question Set 2 start: https://www.examtopics.com/exams/microsoft/az-204/view/8/)
+
+-----------------------------
+T1#5：You develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.
+You need to ensure that scripts run and resources are available before a swap operation occurs.
+Solution: Update the web.config file to include the applicationInitialization configuration element. Specify custom initialization actions to run the scripts.
+Does the solution meet the goal?
+NO
+
+T1#6: You develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.
+You need to ensure that scripts run and resources are available before a swap operation occurs.
+Solution: Enable auto swap for the Testing slot. Deploy the app to the Testing slot.
+Does the solution meet the goal?
+YES
+
+T1#7: You develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.
+You need to ensure that scripts run and resources are available before a swap operation occurs.
+Solution: Disable auto swap. Update the app with a method named statuscheck to run the scripts. Re-enable auto swap and deploy the app to the Production slot.
+Does the solution meet the goal?
+YES
+
+T1#33: You develop and deploy an Azure App Service API app to a Windows-hosted deployment slot named Development. You create additional deployment slots named Testing and Production. You enable auto swap on the Production deployment slot.
+You need to ensure that scripts run and resources are available before a swap operation occurs.
+Solution: Update the app with a method named statuscheck to run the scripts. Update the app settings for the app. Set the
+WEBSITE_SWAP_WARMUP_PING_PATH and WEBSITE_SWAP_WARMUP_PING_STATUSES with a path to the new method and appropriate response codes.
+Does the solution meet the goal?
+NO
+
+----------------------------
+T1#4：You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Trigger the photo processing from Blob storage events.
+Does the solution meet the goal?
+NO
+
+T1#8: You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Convert the Azure Storage account to a BlockBlobStorage storage account.
+Does the solution meet the goal?
+NO
+
+T1#19: You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Move photo processing to an Azure Function triggered from the blob upload.
+Does the solution meet the goal?
+YES
+
+T1#32: You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Create an Azure Function app that uses the Consumption hosting model and that is triggered from the blob upload.
+Does the solution meet the goal?
+YES
+
+T1#38：You develop a software as a service (SaaS) offering to manage photographs. Users upload photos to a web service which then stores the photos in Azure
+Storage Blob storage. The storage account type is General-purpose V2.
+When photos are uploaded, they must be processed to produce and save a mobile-friendly version of the image. The process to produce a mobile-friendly version of the image must start in less than one minute.
+You need to design the process that starts the photo processing.
+Solution: Use the Azure Blob Storage change feed to trigger photo processing.
+Does the solution meet the goal?
+NO
+
+----------------
+T1#16：You develop an HTTP triggered Azure Function app to process Azure Storage blob data. The app is triggered using an output binding on the blob.
+The app continues to time out after four minutes. The app must process the blob data.
+You need to ensure the app does not time out and processes the blob data.
+Solution: Use the Durable Function async pattern to process the blob data.
+Does the solution meet the goal?
+NO
+
+T1#17:You develop an HTTP triggered Azure Function app to process Azure Storage blob data. The app is triggered using an output binding on the blob.
+The app continues to time out after four minutes. The app must process the blob data.
+You need to ensure the app does not time out and processes the blob data.
+Solution: Pass the HTTP trigger payload into an Azure Service Bus queue to be processed by a queue trigger function and return an immediate HTTP success response.
+Does the solution meet the goal?
+YES
+
+T1#18: You develop an HTTP triggered Azure Function app to process Azure Storage blob data. The app is triggered using an output binding on the blob.
+The app continues to time out after four minutes. The app must process the blob data.
+You need to ensure the app does not time out and processes the blob data.
+Solution: Configure the app to use an App Service hosting plan and enable the Always On setting.
+Does the solution meet the goal?
+NO
+----------------
+
+
+
+T1#9: the client certification is available in your app through: a base64 encoded value in HTTP request header.
+T1#10: 创建web app in Docker的CLI 3步：az group create -  az appservice plan create - az webapp create
+T1#11：已经有了resource group, app plan，创建 app in docker的后续步骤顺序：1)appName=.... 2)az webapp create(witht appName) 3) az webapp config container set 关联app(group+app)和docker container 4）az webapp config hostname add 添加hostname 到app(group+app)
+
+
+T1#13：我的理解：remains available 上 app service 优于virtual machine。Shared and Free modes do not offer the scaling flexibility of Standard, and they have some important limits. 
+知识点：https://azure.microsoft.com/en-us/pricing/details/app-service/windows/
+- The Free and Shared (preview) service plans are base tiers that run on the same Azure VMs as other apps. Some apps may belong to other customers. These tiers are intended to be used only for development and testing purposes. There is no SLA provided for Free and Shared service plans. Free and Shared plans are metered on a per App basis.
+- The Basic service plan is designed for apps that have lower traffic requirements, and don't need advanced auto scale and traffic management features.
+- The Standard service plan is designed for running production workloads. Pricing is based on the size and number of instances you run. Built-in network load balancing support automatically distributes traffic across instances. The Standard plan includes auto scale that can automatically adjust the number of virtual machine instances running to match your traffic needs. 
+- Premium v2 Service Plan， Premium v3 Service Plan，比Standard更高级。。。
+- The Isolated service plan is designed to run mission critical workloads, that are required to run in a virtual network. The Isolated plan allows customers to run their apps in a private, dedicated environment in an Azure datacenter using Dv2-series VMs with faster processors, SSD storage, and double the memory-to-core ratio compared to Standard.
+
+T1#14：部署java web app到staging的CLI步骤: 1)az group create 2) az appservice plan create 3) az webapp create  4) az webapp deployment slot create 创建deployment slot(named staging) 5)az webapp deployment source config...--slot staging --repo-url...指定从github repo-url来部署到slot上
+T1#30: 跟T1#14很类似的题目
+
+T1#15：update web service代码，如果tip为空就set 0: 1) getContext().getRequest().getBody();   2) 如果 body i里面的tip不是数字 isNaN 或者 tip===null，i[tip] =0 3）r.setBody(i) r是request
+
+T1#20:答案： Enable the change feed on the storage account and process all changes for available events.
+The purpose of the change feed is to provide transaction logs of all the changes that occur to the blobs and the blob metadata in your storage account. The change feed provides ordered, guaranteed, durable, immutable, read-only log of these changes. Client applications can read these logs at any time, either in streaming or in batch mode. The change feed enables you to build efficient and scalable solutions that process change events that occur in your Blob Storage account at a low cost.
+Reference:
+
+T1#26： ...The customized VM must be saved to allow provisioning of a new team member development environment. You need to save the customized VM for future provisioning.Which tools or services should you use? 就是搭建个开发环境，新同事来了很容易用起来，并且也容易更新版本。
+答案:1） Generalize the VM：Azure Powershell 。明显，命令行 代码最标准，容易维护。
+2）Store images： Azure Blob Storage. 因为You can store images in Azure Blob Storage.
+
+
+T2#3: You are building a website that uses Azure Blob storage for data storage. You configure Azure Blob storage lifecycle to move all blobs to the archive tier after 30 days.
+Customers have requested a service-level agreement (SLA) for viewing data older than 30 days.
+You need to document the minimum SLA for data recovery.
+Which SLA should you use?
+答案：between one and 15 hours。The archive access tier has the lowest storage cost. But it has higher data retrieval costs compared to the hot and cool tiers. Data in the archive tier can take several hours to retrieve depending on the priority of the rehydration. For small objects, a high priority rehydrate may retrieve the object from archive in under 1 hour.
+
+囫囵吞枣/背吧：
+T1#12: You need to grant the Azure Functions application access to the Azure Key Vault.
+Which three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.
+答案：
+Step 1: Create the Azure Functions app with a Consumption plan type.
+Use the Consumption plan for serverless.
+Step 2: Create a system-assigned managed identity for the application.
+Create a system-assigned managed identity for your application.
+Key Vault references currently only support system-assigned managed identities. User-assigned identities cannot be used.
+Step 3: Create an access policy in Key Vault for the application identity.
+Create an access policy in Key Vault for the application identity you created earlier. Enable the "Get" secret permission on this policy. Do not configure the
+"authorized application" or applicationId settings, as this is not compatible with a managed identity.
+
+T1#22： Use a Consumption plan. Configure the Function App to use an Azure Blob Storage trigger.与T1#4考点相似。
+
+T1#23：You are configuring a new development environment for a Java application...How should you complete the Azure Resource Manager template? To answer, select the appropriate options in the answer area.
+一大片json代码，3个填空：copyIndex， copy ，dependsOn 
+
+T1#24: You are developing an Azure Function App by using Visual Studio. The app will process orders input by an Azure Web App. The web app places the order information into Azure Queue Storage. 一大片cT1#代码，对照答案也不理解，背吧。
+
+T1#27：You are preparing to deploy a website to an Azure Web App from a GitHub repository. The website includes static content generated by a script.
+You plan to use the Azure Web App continuous deployment feature.
+You need to run the static generation script before the website starts serving traffic. 双选题：
+答案:1)Add the path to the static content generation tool to WEBSITE_RUN_FROM_PACKAGE setting in the host.json file.
+2)Create a file named .deployment in the root of the repository that calls a script which generates the static content and deploys the website.
+
+T1#31： Azure virtual machine (VM). 完成PowerShell； 命令行 -IdentityType - $SystemAssigned -
+
+T1#34: PowerShell script: ... For each of the following statements, select Yes if the statement is true. Otherwise, select No. 看不懂，跟后面powershell累计到一起再学。
+
+
+有待学习/尝试理解：
+T1#21： 关于docker命令的顺序
+
+T1#25：可以尝试立即下答案。You are developing a solution for a hospital to support the following use cases:...Which consistency levels should you implement? 
+https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels
+
+T1#28: Azure Blob storage。You need to create a copy of the storage account in another region and copy the data. 5个步骤的顺序，还是可以试着理解下的。
+
+T1#29：virtual machine相关，背吧
+
+T1#35： Azure Function app.
+T1#36： You plan to deploy the application to Azure Web App for Containers.。。。You need to configure the application settings so that diagnostic data is stored as required.
+How should you configure the web app settings? 
+答案：WEBSITES_ENABLE_APP_SERVICE_STORAGE --- /home/ 。If WEBSITES_ENABLE_APP_SERVICE_STORAGE setting is unspecified or set to true, the /home/ directory will be shared across scale instances, and files written will persist across restarts
+
+T1#37：页面配置Gateway with SSL. You need to configure the Azure Application Gateway for the web app. Which two actions should you perform?
+答案:In the Azure Application Gateway HTTP setting, enable the Use for App service setting.
+In the Azure Application Gatewayג HTTP setting, set the value of the Override backend path option to contoso22.azurewebsites.net.
+答案里面有截图，也可以弄个账号操作下。
+
+T2#1: A company develops a series of mobile games. All games use a single leaderboard service....You develop the following code to save scores in the data store. (Line numbers are included for reference only.)一大堆java代码，For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+T2#2：类似的代码题
+
+#T2#4: You are developing a ticket reservation system for an airline.
+
+
+疑问：
+1. azure serverless Java application 是不是就是function?
+
+
+

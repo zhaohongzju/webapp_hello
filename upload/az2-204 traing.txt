@@ -1,6 +1,9 @@
 https://www.examtopics.com/exams/microsoft/az-204/
+账号：...@163.com，普通密码
 
+azure portal ...@163.com, 2个特殊符；办了free，已过期。
 
+...@qq.com 普通密码，没办free。 133-8581-3201
 
 ========= DAY 2, 6/28 ================
 Azure Cosmos DB 是一系列DB上提供的服务层。提供多种SLA，不同level价格不同。
@@ -24,7 +27,7 @@ service bus notification hub：目的是简化开发。培训中没有代码演�
 创建Notification Hub。
 
 App Service：内置loadbalance等各种服务。一个hosting plan可以包含多个app service。会话状态管理用的是redis cache。
-Create Web App: 如果不适用后端web job的话，只能选windows；否则选linux 成本更低。
+Create Web App: 如果使用后端web job的话，只能选windows；如果不用webjob的话，可以选linux 成本更低。Linux 上的应用服务尚不支持 WebJobs(???根课上讲的相反)。
 纵向扩展 scale up：增加CPU/内存。scale out: 增加服务器个数，有手工和自动(依据指标) 2种模式。考试: 增加计数 不同于 增加计数至
 websiteencpic里面pom那一大段怎么来? 能够自动创建 app service吗，还是要用在azure portal手工创建的 app service？代码里面pom要修改：subscriptionId，resourceGroup，region，pricingTier
 如何发布war到app service？
@@ -52,7 +55,6 @@ Azure Logic App（不用写代码的程序）：
 找不到 Login App 设计器。
 会跟event grid冲突（事件被2者同时接受）
 
-
 ======== DAY 2, 6/27 =================
 azure portal上创建ACI，而不是CLI: azure container instance， 从azure docker registery里面pull image，run 起来。
 
@@ -62,7 +64,6 @@ DB 用户名 zhh，密码是LAN PWD。 Public endpoint（以便公网可以访�
 sqlconnection string: https://portal.azure.com/#@zhaohongzju163.onmicrosoft.com/resource/subscriptions/2b97aa69-7d26-44f9-9c98-26a84fb6af39/resourceGroups/AZ204-Training-20210626/providers/Microsoft.Sql/servers/ordersystem-server1/databases/az204SQLDB1/connectionStrings
 azure always encripted（全程加密）：在ssms里面创建always encripted 秘钥。列主秘钥：对称加密。 列加密秘钥：非对称？要求：排序规则是2进制的：*_BIN2.
 JDBC 里面 要带一点儿always encripted相关的代码。
-
 
 .vhd文件用page blob实现。
 in azure portal: create storage。storage account: 创建container "imgs"，在imgs里面上传文件。上传时可以带文件夹（虚假的文件夹，删除文件时，文件夹会被删除）
@@ -84,8 +85,6 @@ az cloud set --name AzureChinaCloud
 az login 
 然后会有浏览器上login ， login后可以关闭浏览器。 我自己这里会有error。
 
-
-
 创建虚拟网络（虚拟网卡，防火墙ACL, 域名，）
 ，主机，IP/公网IP，load ballance，高可用性（断网、断电），安全（网络安全组）
 Azure支持存算分离(snowflake)
@@ -93,12 +92,11 @@ Azure支持存算分离(snowflake)
 连Azure，没必要用WSL子系统，用虚拟机（hiperv, vmware, virtual box)
 
 高可用性：缩放虚拟机，高可用性集。
-容错域fault domain。是物理概念，至少2个。比如：VM在不同的机架rack，用不同的电源。
-更新域upgrade domain。是逻辑概念，至少4个更新域。发布时依次重启。
+容错域fault domain。是物理概念，至少2个。比如：VM在不同的机架rack，用不同的电源，一个rack就是一个fault domain。比如一个availability set（一组VM） 包含2个VM，分别在2个rack上。
+更新域upgrade domain。是逻辑概念，推荐至少4个更新域(官网上没看到文字)。OS更新发布时依次重启。（我的理解，更新域是个更大的概念：Azure will automatically place availability sets into update domains to minimize the impact when the Azure platform introduces host operating system changes. Azure then processes each update domain one at a time.）
 创建VM时就要指定高可用性集，创建好以后就不能加高可用性集了，也不能改高可用性集了。
 
 请求先到load ballance，再转到高可用性集。load ballance: 心跳health live，根据端口转发分流.
-
 
 演示：vm, 高可用性集， web 服务器，loadbalance, 隐藏端口，健康检测，docker。今天不用IDE，明天代码
 

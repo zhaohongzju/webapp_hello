@@ -1,0 +1,38 @@
+
+
+Azure serverless： 逻辑应用和 Azure Function。 
+
+如果是app service的一部分或者要访问jobhost，就必须用webjob 而不能用function。但是function scalable+available 明显更好。
+
+
+Function：
+默认情况下，函数的超时时间为 5 分钟。
+第二个特征是执行频率。 如果希望多个客户端连续执行函数，谨慎的做法是估计使用量并相应地计算使用函数的成本。 在 VM 上托管服务可能会更便宜。
+所以：创建function，指定trigger  input/output，指定secure，添加function业务代码。
+
+
+VM:
+Microsoft 不会自动更新 VM OS 或软件。 你具有完全控制能力并为此承担相应责任。 但是，基础软件主机和硬件会定期修补，以始终确保可靠性和高性能。
+若要确保服务不会中断并避免单一故障点，建议每个 VM 至少部署两个实例。 此功能称为可用性集 availability set。
+fault domain
+
+
+========8/14============
+使用 Azure 应用服务托管 Web 应用程序：选择“Windows”会激活“监视”选项卡，可在此处选择启用 Application Insights。 如果启用此功能，你的应用会配置为自动将详细的性能遥测数据发送到 Application Insights 监视服务，而无需对代码进行任何更改。 Application Insights 也可在 Linux 托管的应用中使用，但这一无代码的统包选项仅适用于 Windows。
+
+deployment slot: ...deploy test slot by swapping its slot with the production slot...a slot swap is instantaneous. When you swap slots, the slot hostnames are exchanged, immediately sending production traffic to the new version of the app. 疑问：swap deployment slot上的db时，app里面的连接池，怎么办？test slot系统初始化的单例已经包含了test properties，切换到prod会有问题，怎么办？
+each slot shares the resources of the App Service plan, including virtual machine memory and CPU as well as disk space.疑问：那test slot做性能测试时会挤占production slot的资源吗？
+
+git push staging：把web app部署到staging slot
+
+
+
+设想：
+1.Azure的资源管理太琐碎，导致系统管理员很难根据琐碎的资源配置来想象出整个系统的全貌。应该提供一些类现实的抽象(eg: pod, system, infro topology)，并用图形的方式来展示这些抽象，在图形界面中管理琐碎的资源，比如：把一个VM拖到 v-net里面，点击VM来IP/CPU/Mem/storage，等。
+2.提供功能，把已有的琐碎配置 生成出一个topylogy diagram，类似数据库工具ER-win。
+3.当搜索某个tag或资源名时，在图形中高亮出匹配的资源。
+4.基于约定生成缺省值 从而大幅简化配置，而不是啥啥都要管理员配置或程序指定值。
+5.根据业务类型（问卷） 自动生成一个资源 topology 的template给客户，客户在template上修改/扩展/验证/确认，而不是啥啥都要从0开始一点儿点儿添加。等修改好topology图后，azure才创建真正的资源。
+
+
+
